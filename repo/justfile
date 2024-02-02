@@ -1,0 +1,11 @@
+set shell := ["/usr/bin/env", "bash", "-uc"]
+set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
+# To load .env files uncomment this line:
+# set dotenv-load
+
+# default command
+default: help
+
+# 🤔 Show help messages for targets
+help:
+  @just --list
