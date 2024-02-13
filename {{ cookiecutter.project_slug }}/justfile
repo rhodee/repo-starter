@@ -6,6 +6,10 @@ set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 # default command
 default: help
 
+# render SVG from markdown
+build-svg-docs:
+  @docs/svg_gen.sh
+
 # 🤔 Show help messages for targets
 help:
   @just --list

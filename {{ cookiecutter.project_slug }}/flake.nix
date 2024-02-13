@@ -45,14 +45,19 @@
       {
         devShells = {
           default = pkgs.mkShell {
+            NPM_CONFIG_REGISTRY = "https://registry.npmjs.org";
+
             # Things that must be available **at compile time** go here.
             nativeBuildInputs = with pkgs; [] ++commonArgs.nativeBuildInputs;
+
             # Things that must be available **at runtime** go here.
             buildInputs = [] ++ commonArgs.buildInputs;
 
             # Stuff to use inside the shell
             packages = with pkgs; [
+              fd
               just
+              nodePackages.pnpm
             ];
           };
         };
